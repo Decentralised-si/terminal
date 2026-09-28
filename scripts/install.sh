@@ -2957,6 +2957,7 @@ configure_dsi_network() {
     [ "$USE_VENV" = true ] && py="$INSTALL_DIR/venv/bin/python"
     (cd "$INSTALL_DIR" && "$py" -m hermes_cli.main config set model.provider decentralised >/dev/null \
         && "$py" -m hermes_cli.main config set model.default auto >/dev/null \
+        && "$py" -m hermes_cli.main config set model.base_url https://api.decentralised.si/openai/v1 >/dev/null \
         && "$py" -m hermes_cli.main config set DSI_API_KEY "$key" >/dev/null) \
         || { log_warn "Could not save the Decentralised.si settings; run: dsi-agent config set DSI_API_KEY <key>"; return 0; }
     log_success "Connected to Decentralised.si (model: auto)"

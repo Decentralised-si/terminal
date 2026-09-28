@@ -4514,6 +4514,7 @@ function Set-DsiNetwork {
         $py = if (-not $NoVenv) { ".\venv\Scripts\python.exe" } else { "python" }
         & $py -m hermes_cli.main config set model.provider decentralised | Out-Null
         & $py -m hermes_cli.main config set model.default auto | Out-Null
+        & $py -m hermes_cli.main config set model.base_url https://api.decentralised.si/openai/v1 | Out-Null
         & $py -m hermes_cli.main config set DSI_API_KEY $key | Out-Null
         Write-Success "Connected to Decentralised.si (model: auto)"
         return $true
