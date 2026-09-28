@@ -1,0 +1,5 @@
+name: decentralised-provider
+kind: model-provider
+version: 1.0.0
+description: Decentralised.si network — one API key, every model, routed by DSI Axon
+author: Decentralised.si
