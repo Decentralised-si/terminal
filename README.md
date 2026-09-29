@@ -29,7 +29,7 @@ DSI_API_KEY=ds_live_... curl -fsSL https://decentralised.si/install/agent.sh | b
 ```bash
 dsi-agent                                  # interactive session
 dsi-agent -z "summarise README.md"         # one question, answer only
-dsi-agent -m auto                          # let the router choose (default)
+dsi-agent -m auto                          # let the router choose the model
 dsi-agent config set DSI_API_KEY ds_live_...   # set or change your key
 dsi-agent setup                            # other providers, messaging, tools
 dsi-agent update                           # update to the latest version
@@ -46,7 +46,7 @@ The agent talks to the network's OpenAI-compatible API:
 | Provider | `decentralised` (aliases `dsi`, `decentralised-si`) |
 | Base URL | `https://api.decentralised.si/openai/v1` |
 | Key | `DSI_API_KEY` (a `ds_` key), stored in `~/.hermes/.env` |
-| Model | `auto`, or any model your account can reach (`/models`) |
+| Model | `@cf/zai-org/glm-5.3-flash` by default (long context, reliable tool calls); `auto`, or any model your account can reach |
 
 Your account decides what `auto` can use: open models on the network, hosted open models, and commercial models through your own vendor keys (Console → Providers). Usage and spend show up in the console like any other API call.
 

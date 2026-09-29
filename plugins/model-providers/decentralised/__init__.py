@@ -19,8 +19,10 @@ decentralised = ProviderProfile(
     auth_type="api_key",
     # Tell the router this is an agent session; it keeps a conversation on one provider.
     default_headers={"x-decentralise-client": "dsi-agent-terminal"},
-    fallback_models=("auto",),
-    default_aux_model="auto",
+    # Default: a long-context open model with reliable tool calling (GLM 5.3 Flash on Workers AI).
+    # "auto" lets the router choose; agent-grade hosted models need naming explicitly today.
+    fallback_models=("@cf/zai-org/glm-5.3-flash", "@cf/deepseek-ai/deepseek-v4-flash-0731", "@cf/moonshotai/kimi-k2.7-code", "auto"),
+    default_aux_model="@cf/zai-org/glm-5.3-flash",
 )
 
 register_provider(decentralised)

@@ -43,7 +43,7 @@ runtime:
 model:
   # Default model to use (can be overridden with --model flag)
   # Both "default" and "model" work as the key name here.
-  default: "auto"
+  default: "@cf/zai-org/glm-5.3-flash"   # or "auto" to let the router choose
   
   # Inference provider selection:
   #   "decentralised" - Decentralised.si network (requires: DSI_API_KEY) — DSI Agent Terminal default
